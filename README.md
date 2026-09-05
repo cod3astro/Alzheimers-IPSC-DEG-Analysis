@@ -25,7 +25,7 @@ flagged directly in the notebook instead of glossed over.
 ## Key Result
 With the mislabeling fixed, this dataset supports a **descriptive candidate-gene ranking**, not a statistically validated DEG list, 30% of all probes clear a loose |log2FC| > 1 cutoff with no statistical filter, which is far too large a 
 fraction to trust as a real hit list from a single control array. Reassuringly, this doesn't overturn the original headline finding: reproducing the earlier (mislabeled) pipeline still gives zero genes significant after Benjamini-Hochberg 
-correction (minimum adjusted p = 0.916).
+correction (minimum adjusted p = 0.916). The original conclusion survives, but the write-up's stated "n=2 vs n=2" comparison was never actually the one that ran, and this version fixes that.
 
 ## How to Run
 ```bash
@@ -42,3 +42,10 @@ src/        reserved for future standalone pipeline scripts
 results/    figures and output tables
 ```
 
+Related Writing
+
+Original write-up on Medium: [Computational Analysis of Differentially Expressed Genes in Familial Alzheimer's Disease iPSCs with Presenilin 2 Mutation](https://medium.com/@cod3astro/computational-analysis-of-differentially-expressed-genes-in-familial-alzheimers-disease-ipscs-be7c94a80f5a?sharedUserId=cod3astro)
+
+Notes
+
+This is a personal/independent re-analysis project, not a lab-supervised study. The published Medium article's control-group labeling has since been corrected here, GSM701543 (Sporadic Parkinson's disease iPSC) is no longer treated as a second control replicate. With more time and access to additional public control iPSC lines, the natural next step is a properly powered t-test with real biological replicates on both sides, plus full probe-to-gene-symbol mapping and a GSEA/WGCNA pass, both of which the original write-up's Discussion section already flagged as better fits for small datasets like this one.
